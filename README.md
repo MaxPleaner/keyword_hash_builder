@@ -1,4 +1,4 @@
-_gem skeleton generated with [gemmy](http://github.com/maxpleaner/gemmyrb)_
+_gem skeleton generated with [gemmy](http://github.com/maxpleaner/gemmy)_
 
 This provides a syntax somewhat similar to Javascript's shorthand for constructing hashes.
 
