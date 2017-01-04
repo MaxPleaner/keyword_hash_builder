@@ -8,7 +8,7 @@ class KeywordHashBuilder
         str.split(?,).zip(eval("[#{str}]", inspector.frame_binding(2))).to_h
       end
     end
-    refine String do
+    refine Object do
       include BacktickPatch
     end
   end
