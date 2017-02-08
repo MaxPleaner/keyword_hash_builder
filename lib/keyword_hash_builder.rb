@@ -5,7 +5,9 @@ class KeywordHashBuilder
   module BacktickPatch
     def `(str)
       RubyVM::DebugInspector.open do |inspector|
-        str.split(?,).zip(eval("[#{str}]", inspector.frame_binding(2))).to_h
+        str.split(?,).zip(eval("[#{str}]", inspector.frame_binding(2))).to_h.reduce({}) do |mem, (k,v)|
+          mem.tap { mem[k.to_s] = v }
+        end
       end
     end
     refine Object do
